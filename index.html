@@ -101,14 +101,15 @@
             welcomeScreen.style.visibility = 'hidden';
             gameContainer.classList.add('fullscreen');
 
-            // הגדרת נתיב בסיס אבסולוטי ומדויק לפי השרת של גיטהאב שלך
-            var unityBuildPath = "https://adamram49-source.github.io/tryagainidinthavetimetowaitaaaaaaahhhaaa.loader.js/Build";
+            // נתיב מעודכן עם build באותיות קטנות
+            var unityBuildPath = "https://adamram49-source.github.io/adam-game-of-life/build";
 
+            // הסרנו את ה- .br כדי למנוע את חסימת השרת של גיטהאב
             var config = {
                 arguments: [],
-                dataUrl: unityBuildPath + "/GameOfLifeWebsite.data.br",
-                frameworkUrl: unityBuildPath + "/GameOfLifeWebsite.framework.js.br",
-                codeUrl: unityBuildPath + "/GameOfLifeWebsite.wasm.br",
+                dataUrl: unityBuildPath + "/GameOfLifeWebsite.data",
+                frameworkUrl: unityBuildPath + "/GameOfLifeWebsite.framework.js",
+                codeUrl: unityBuildPath + "/GameOfLifeWebsite.wasm",
                 streamingAssetsUrl: "StreamingAssets",
                 companyName: "DefaultCompany",
                 productName: "MyGameOfLife",
@@ -116,7 +117,6 @@
                 showBanner: false
             };
 
-            // טעינת הלואדר באמצעות נתיב מלא ומדויק
             const script = document.createElement("script");
             script.src = unityBuildPath + "/GameOfLifeWebsite.loader.js"; 
             
