@@ -101,15 +101,17 @@
             welcomeScreen.style.visibility = 'hidden';
             gameContainer.classList.add('fullscreen');
 
-            // נתיב עם B גדולה כפי שמופיע בצילום המסך שלך
-            var unityBuildPath = "https://adamram49-source.github.io/adam-game-of-life/Build";
+            // שימוש בנתיב יחסי חסין שגיאות לתיקיית ה-Build באות גדולה
+            var unityBuildPath = "Build";
 
-            // שמות הקבצים המדויקים על פי תיקיית ה-Build האמיתית שלך בגיטהאב
+            // השם המדויק כפי שמופיע בשגיאת ה-404 האחרונה שלך
+            var baseFileName = "tryagaininthavetimetowaitaaahhhaaa";
+
             var config = {
                 arguments: [],
-                dataUrl: unityBuildPath + "/tryagaininthavetimetowaitaaaaaaahhhaaa.data.br",
-                frameworkUrl: unityBuildPath + "/tryagaininthavetimetowaitaaaaaaahhhaaa.framework.js.br",
-                codeUrl: unityBuildPath + "/tryagaininthavetimetowaitaaaaaaahhhhhh.wasm.br",
+                dataUrl: unityBuildPath + "/" + baseFileName + ".data.br",
+                frameworkUrl: unityBuildPath + "/" + baseFileName + ".framework.js.br",
+                codeUrl: unityBuildPath + "/" + baseFileName + ".wasm.br",
                 streamingAssetsUrl: "StreamingAssets",
                 companyName: "DefaultCompany",
                 productName: "MyGameOfLife",
@@ -118,11 +120,11 @@
             };
 
             const script = document.createElement("script");
-            script.src = unityBuildPath + "/tryagaininthavetimetowaitaaaaaaahhhaaa.loader.js"; 
+            script.src = unityBuildPath + "/" + baseFileName + ".loader.js"; 
             
             script.onload = () => {
                 createUnityInstance(document.getElementById("unity-canvas"), config, (progress) => {
-                    // מד טעינה ברקע
+                    // מד טעינה
                 }).then((unityInstance) => {
                     console.log("המשחק עלה בהצלחה!");
                 }).catch((message) => {
